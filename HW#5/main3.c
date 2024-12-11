@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    for (int i = 1; i <= 81; i++) { 
-        int x = (i - 1) / 9 + 1;    
-        int y = (i - 1) % 9 + 1;    
-
-        printf("%d*%d=%d\t", x, y, x * y);
-        if (y == 9) {              
+    for (int i = 1, j = 0; i <= 9;) {
+        printf("%d*%d=%d\t", i, j, i * ++j);
+        if (j == 9) {
+            i++;
+            j = 0;
             printf("\n");
         }
     }
